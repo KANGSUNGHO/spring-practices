@@ -16,13 +16,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class BoardController {
 	
 	@ResponseBody
-	@RequestMapping("/board/write")
+	@RequestMapping("/board/write") // http://127.0.0.1:8080/hellospring03/board/write
 	public String write() {
 		return "BoardController:write";
 	}
 	
 	@ResponseBody
-	@RequestMapping("/board/view/{no}")
+	@RequestMapping("/board/view/{no}") // http://127.0.0.1:8080/hellospring03/board/view/10
 	public String view(@PathVariable("no") Long no) {
 		return "BoardController:view " + no;
 	}

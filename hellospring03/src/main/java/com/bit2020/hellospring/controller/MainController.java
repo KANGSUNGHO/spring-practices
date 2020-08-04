@@ -1,8 +1,5 @@
 package com.bit2020.hellospring.controller;
 
-import java.io.UnsupportedEncodingException;
-
-import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,13 +8,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class MainController {
 	
- 	@ResponseBody // 메시지 컨버
-	@RequestMapping({"","/main","/a/b/c/e/f"})
+ 	@ResponseBody // ResponseBody가 붙으면 메시지 컨버터, 안붙으면 view resolve
+	@RequestMapping({"","/main","/a/b/c/e/f"}) // 멀티로 매핑 
 	public String main() {
 		return "MainController:main()";
 	}
  	
-//	@ResponseBody // 메시지 컨버
+//	@ResponseBody // 메시지 컨버터 
 //	@RequestMapping("/test")
 //	public String test(HttpServletRequest request) throws UnsupportedEncodingException {
 //		request.setCharacterEncoding("UTF-8");

@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping("/user")
 public class UserController {
 	
-	@RequestMapping(value="/join", method=RequestMethod.GET)
+	@RequestMapping(value="/join", method=RequestMethod.GET) // http://127.0.0.1:8080/hellospring03/user/join
 	public String join() {
 		return "/WEB-INF/views/join.jsp";
 	}

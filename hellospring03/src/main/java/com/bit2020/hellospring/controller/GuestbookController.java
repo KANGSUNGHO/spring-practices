@@ -15,14 +15,14 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping("/guestbook/*")
 public class GuestbookController {
 	
-	@ResponseBody
-	@RequestMapping
-	public String list() {
+	@ResponseBody // 디버깅과 브라우저에 매핑이 잘되는지 확인하려고 
+	@RequestMapping // http://127.0.0.1:8080/hellospring03/guestbook/list
+	public String list() { 
 		return "GuestbookController:list";
 	}
 	
 	@ResponseBody
-	@RequestMapping
+	@RequestMapping // http://127.0.0.1:8080/hellospring03/guestbook/delete
 	public String delete() {
 		return "GuestbookController:delete";
 	}
