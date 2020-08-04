@@ -16,7 +16,7 @@
 		<org.springframework-version>4.3.2.RELEASE</org.springframework-version>
 	</properties>
 
-		<dependencies>
+	<dependencies>
 		<!--Spring Core, Spring Context, Spring AOP -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -45,7 +45,7 @@
 			<version>2.6.2</version>
 		</dependency>
 
-		<!-- JSTL  -->
+		<!-- JSTL -->
 		<dependency>
 			<groupId>jstl</groupId>
 			<artifactId>jstl</artifactId>
@@ -54,8 +54,19 @@
 	</dependencies>
 
 	<build>
+		<finalName>emaillist03</finalName>
 		<sourceDirectory>src/main/java</sourceDirectory>
 		<!-- 메이븐의 특징 플러그들이 발달 되어 있음 -->
+
+		<resources>
+			<resource>
+				<directory>${project.basedir}/src/main/resources</directory>
+				<excludes>
+					<exclude>**/*.java</exclude>
+				</excludes>
+			</resource>
+		</resources>
+
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -64,6 +75,23 @@
 				<configuration>
 					<source>1.8</source>
 					<target>1.8</target>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<configuration>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>3.2.1</version>
+				<configuration>
+					<warSourceDirectory>src/main/webapp</warSourceDirectory>
+					<failOnMissingWebXml>false</failOnMissingWebXml>
 				</configuration>
 			</plugin>
 		</plugins>

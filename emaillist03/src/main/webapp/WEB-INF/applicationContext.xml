@@ -12,7 +12,7 @@
         http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
         http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd">
 
-	<context:annotation-config />
+	<context:annotation-config /> <!-- 스캐닝 하겠다는 뜻임. -->
 
 	<context:component-scan
 		base-package="com.bit2020.emaillist.respository">

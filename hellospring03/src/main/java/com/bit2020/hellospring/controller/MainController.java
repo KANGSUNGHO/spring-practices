@@ -16,7 +16,7 @@ public class MainController {
  	
 //	@ResponseBody // 메시지 컨버터 
 //	@RequestMapping("/test")
-//	public String test(HttpServletRequest request) throws UnsupportedEncodingException {
+//	public String test(HttpServletRequest request) throws UnsupportedEncodingException { // 기술 침투가 됨. 
 //		request.setCharacterEncoding("UTF-8");
 //		return "MainController:main()";
 //	} // 이렇게 하면 안됨. 

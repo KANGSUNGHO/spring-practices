@@ -13,11 +13,11 @@ import com.bit2020.emaillist.vo.EamillistVo;
 
 @Controller
 public class EmaillistController {
-	@Autowired
-	private EmaillistRepository emaillistRepository;
+ 	@Autowired //DI를 해줌. Root Application Context에 있는 EmaillistRepository의 emaillistReository를 web Application Context 에 있는 EmaillistController에 넣어줌.  
+	private EmaillistRepository emaillistRepository; //EmaillistRepository 생성, 스프링은 new 안함, 컨테이너가 해줌. 
 	
 //	@ResponseBody
-	@RequestMapping("")
+	@RequestMapping("") // 127.0.0.1:8080/emaillist03/
 	public String index(Model model) {
 		List<EamillistVo> list = emaillistRepository.findAll();
 		model.addAttribute("list", list);
