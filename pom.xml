@@ -10,5 +10,6 @@
 	<modules>
 		<module>hellospring03</module>
 		<module>emaillist03</module>
+		<module>logex</module>
 	</modules>
 </project>
