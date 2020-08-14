@@ -12,14 +12,15 @@ import org.springframework.stereotype.Component;
 @Aspect
 @Component
 public class MyAspect {
-
+//  @Before("execution(접근지시자 리턴타입 클래스함수(파라미터))")
 	@Before("execution(public com.bit2020.aoptest.vo.ProductVo com.bit2020.aoptest.service.ProductService.find(String))")
 	public void beforeAdvice() {
 		System.out.println("----- before advice -----"); // what
 		
 	}
 	
-
+// 접근지시자와 throws는 생략가능 	
+// @After("execution(리턴타입은 아무거나가능 메소드이름은 ProductService에 있는 모든 메소드와 모든 파라미터)")
 	@After("execution(* *..*.service.ProductService.*(..))")
 	public void afterAdvice() {
 		System.out.println("----- after advice -----"); // what
@@ -32,9 +33,10 @@ public class MyAspect {
 		
 	}
 
+	// 예외가 발생한 다음에...
 	@AfterThrowing(value="execution(* *..*.service.ProductService.*(..))",throwing="ex")
 	public void afterThrowingAdvice(Throwable ex) {
-		System.out.println("----- afterThrowing advice -----" + ex); // what
+		System.out.println("----- afterThrowing advice : " + ex + "----"); // what
 		
 	}
 	
